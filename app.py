@@ -39,23 +39,40 @@ def fetch_movies(page=1):
         "page": page
     }
 
-    res = requests.get(url, params=params).json()
+    try:
+        response = requests.get(url, params=params)
+        print("STATUS:", response.status_code)
 
-    movies = []
-    for m in res.get("results", []):
-        genre_name = "Drama"
-        if m.get("genre_ids"):
-            genre_name = GENRE_MAP.get(m["genre_ids"][0], "Drama")
+        if response.status_code != 200:
+            print("ERROR RESPONSE:", response.text)
+            return []
 
-        movies.append({
-            "id": m["id"],
-            "title": m["title"],
-            "genre": genre_name,
-            "avg_rating": round(m["vote_average"] / 2, 2),  # convert /10 → /5
-            "year": m.get("release_date", "")[:4] if m.get("release_date") else "N/A"
-        })
+        data = response.json()
 
-    return movies
+        if "results" not in data:
+            print("INVALID RESPONSE:", data)
+            return []
+
+        movies = []
+        for m in data["results"]:
+            genre_name = "Drama"
+            if m.get("genre_ids"):
+                genre_name = GENRE_MAP.get(m["genre_ids"][0], "Drama")
+
+            movies.append({
+                "id": m["id"],
+                "title": m["title"],
+                "genre": genre_name,
+                "avg_rating": round(m["vote_average"] / 2, 2),
+                "year": m.get("release_date", "")[:4] if m.get("release_date") else "N/A"
+            })
+
+        print(f"Fetched {len(movies)} movies from page {page}")
+        return movies
+
+    except Exception as e:
+        print("EXCEPTION:", str(e))
+        return []
 
 
 def get_movies():
@@ -66,7 +83,12 @@ def get_movies():
 
 
 # Cache for performance
-MOVIES_CACHE = get_movies()
+MOVIES_CACHE = []
+try:
+    MOVIES_CACHE = get_movies()
+    print("TOTAL MOVIES:", len(MOVIES_CACHE))
+except Exception as e:
+    print("FAILED TO LOAD MOVIES:", e)
 
 
 # ─────────────────────────────────────────────
