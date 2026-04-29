@@ -296,7 +296,7 @@ class MovieHandler(BaseHTTPRequestHandler):
             emotion = data.get("emotion", "neutral").lower()
             preferred_genres = data.get("preferred_genres", [])
             review_text = data.get("review_text", "").strip()
-            top_n = int(data.get("top_n", 10))
+            top_n = int(data.get("top_n", 40))
 
             # Override emotion via sentiment if review text provided
             sentiment_result = None
