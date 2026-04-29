@@ -12,7 +12,7 @@ API_KEY = "9eaba43292d7ca6807b0897a106cd623"   # 👈 PUT YOUR OMDb API KEY
 
 # ================= FETCH MOVIE FROM API =================
 def fetch_movie(movie_name):
-    url = f"http://www.omdbapi.com/?t={movie_name}&apikey={API_KEY}"
+    url = f"https://www.omdbapi.com/?t={movie_name}&apikey={API_KEY}"
     res = requests.get(url)
     data = res.json()
 
