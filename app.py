@@ -259,7 +259,7 @@ class MovieAPIHandler(BaseHTTPRequestHandler):
                 "time_of_day": time_of_day,
                 "preferred_genres": user_genres,
                 "sentiment_analysis": sentiment_data,
-                "top_recommendations": predictions[:10],
+                "top_recommendations": predictions[:20],
                 "all_predictions": predictions,
                 "metrics": metrics,
                 "model_info": {
