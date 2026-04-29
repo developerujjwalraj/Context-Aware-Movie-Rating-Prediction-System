@@ -258,7 +258,7 @@ async function run(){
   document.getElementById('emptyEl').style.display='none';
   document.getElementById('resultsEl').classList.remove('show');
   document.getElementById('loadingEl').classList.add('show');
-  const payload={emotion,preferred_genres:genres,time_of_day:time,review_text:document.getElementById('reviewText').value,top_n:20};
+  const payload={emotion,preferred_genres:genres,time_of_day:time,review_text:document.getElementById('reviewText').value,top_n:40};
   try{const r=await fetch(`${API}/api/predict`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});renderResults(await r.json());}
   catch{renderDemo(payload);}
   finally{btn.disabled=false;btn.textContent='Predict Ratings';document.getElementById('loadingEl').classList.remove('show');}
