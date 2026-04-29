@@ -8,7 +8,7 @@ import re
 import os
 
 # ================= API KEY =================
-API_KEY = "your_api_key_here"   # 👈 PUT YOUR OMDb API KEY
+API_KEY = "9eaba43292d7ca6807b0897a106cd623"   # 👈 PUT YOUR OMDb API KEY
 
 # ================= FETCH MOVIE FROM API =================
 def fetch_movie(movie_name):
