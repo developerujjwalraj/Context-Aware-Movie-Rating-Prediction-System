@@ -217,7 +217,7 @@ footer{padding:32px 0;display:flex;justify-content:space-between;align-items:cen
 
 </div>
 <script>
-const API='http://localhost:5000';
+const API='https://movie-api-kd7m.onrender.com';
 let emotion='happy',time='evening',genres=[];
 document.querySelectorAll('.e-btn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.e-btn').forEach(x=>x.classList.remove('on'));b.classList.add('on');emotion=b.dataset.e;}));
 document.querySelectorAll('.t-btn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.t-btn').forEach(x=>x.classList.remove('on'));b.classList.add('on');time=b.dataset.t;}));
