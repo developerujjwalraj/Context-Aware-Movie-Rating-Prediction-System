@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Rating Predictor</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <a href="#" class="logo">Movie Rating Predictor<span class="logo-dot">.</span></a>
+    <nav>Context-Aware Rating Predictor</nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-kicker">Emotion-Aware System &nbsp;&nbsp;</div>
+    <h1>Movies matched<br>to your <i>mood.</i></h1>
+    <p>A hybrid recommendation system using sentiment analysis, emotion-genre weighting, and temporal context to predict ratings with precision.</p>
+  </section>
+
+  <section class="form-section">
+    <div class="form-cols">
+      <div>
+        <div class="section-num">01 &nbsp;&nbsp; Emotional State</div>
+        <div class="field">
+          <label>How are you feeling right now?</label>
+          <div class="emotion-grid" id="emotionGrid">
+            <button class="e-btn on" data-e="happy"><span class="e-icon">😄</span>Happy</button>
+            <button class="e-btn" data-e="sad"><span class="e-icon">😔</span>Sad</button>
+            <button class="e-btn" data-e="excited"><span class="e-icon">⚡</span>Excited</button>
+            <button class="e-btn" data-e="anxious"><span class="e-icon">😰</span>Anxious</button>
+            <button class="e-btn" data-e="bored"><span class="e-icon">😑</span>Bored</button>
+            <button class="e-btn" data-e="stressed"><span class="e-icon">😤</span>Stressed</button>
+            <button class="e-btn" data-e="romantic"><span class="e-icon">💕</span>Romantic</button>
+            <button class="e-btn" data-e="neutral"><span class="e-icon">😐</span>Neutral</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Time of Day</label>
+          <div class="time-row" id="timeGrid">
+            <button class="t-btn" data-t="morning">Morning</button>
+            <button class="t-btn" data-t="afternoon">Afternoon</button>
+            <button class="t-btn on" data-t="evening">Evening</button>
+            <button class="t-btn" data-t="night">Night</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-num">02 &nbsp;&nbsp; Preferences</div>
+        <div class="field">
+          <label>Favourite Genres</label>
+          <div class="genre-wrap">
+            <span class="g-pill" data-g="Action">Action</span>
+            <span class="g-pill" data-g="Comedy">Comedy</span>
+            <span class="g-pill" data-g="Drama">Drama</span>
+            <span class="g-pill" data-g="Horror">Horror</span>
+            <span class="g-pill" data-g="Romance">Romance</span>
+            <span class="g-pill" data-g="Sci-Fi">Sci-Fi</span>
+            <span class="g-pill" data-g="Thriller">Thriller</span>
+          </div>
+        </div>
+        <div class="field">
+          <label>Describe your mood &nbsp;<span style="font-size:11px;text-transform:none;letter-spacing:0;color:var(--ink3)">— NLP detects emotion</span></label>
+          <textarea id="reviewText" placeholder="e.g. I'm feeling really happy today and want something fun and light…"></textarea>
+          <div class="sentiment" id="sentBox">
+            <div class="s-row"><span>Sentiment</span><span id="sLabel">—</span></div>
+            <div class="s-bar"><div class="s-fill" id="sFill" style="width:50%"></div></div>
+            <div class="s-detected" id="sEmotion"></div>
+          </div>
+        </div>
+        <button class="btn-go" id="predictBtn" onclick="run()">Suggest Movies</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="loading" id="loadingEl">
+    <div class="dot-row"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    Analysing emotional context
+  </div>
+
+  <section class="results-section" id="resultsEl">
+    <div class="metrics" id="metricsEl"></div>
+    <div class="context-line">
+      <h2>Top Recommendations</h2>
+      <span class="ctx-badge" id="ctxBadge"></span>
+    </div>
+    <div class="movie-list" id="movieListEl"></div>
+  </section>
+
+  <div class="empty" id="emptyEl">
+    <span class="empty-mark">✦</span>
+    Choose your emotional state and preferences,<br>
+    then press <strong style="font-weight:400;color:var(--ink)">Predict Ratings</strong> to get personalised results.
+  </div>
+  <div class="empty" id="emptyE2">
+    Made with ❤️ by
+   <strong style="font-weight:400;color:var(--ink)">Ujjwal Raj</strong>. 
+  </div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
