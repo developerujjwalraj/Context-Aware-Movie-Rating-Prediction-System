@@ -1,7 +1,6 @@
-# 🎬 CINEMO — Context-Aware Movie Rating Prediction System
+#  Context-Aware Movie Rating Prediction System
 
-> **Chandigarh University | April 2026**
-> Team: Ujjwal Raj, Abhinav Patial, Rajvardhan Singh, Vishesh
+
 
 A full-stack Movie Rating Prediction System using **sentiment-based emotion detection** combined with a **hybrid recommendation model** (Collaborative + Content-Based Filtering), evaluated using MAE and RMSE.
 
@@ -15,7 +14,9 @@ movie-rating-predictor/
 │   ├── app.py              
 │   └── requirements.txt    
 ├── frontend/
-│   └── index.html          
+│   └── index.html
+|   └── styles.css
+|   └── app.js        
 └── README.md
 ```
 
