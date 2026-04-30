@@ -1,4 +1,4 @@
-# 🎬 CINEMO — Context-Aware Movie Rating Prediction System
+#  Context-Aware Movie Rating Prediction System
 
 
 
