@@ -5,7 +5,7 @@
 
 A full-stack Movie Rating Prediction System using **sentiment-based emotion detection** combined with a **hybrid recommendation model** (Collaborative + Content-Based Filtering), evaluated using MAE and RMSE.
 
- Website is live at: https://developerujjwalraj.github.io/Context-Aware-Movie-Rating-Prediction-System/
+ Project is live at: https://developerujjwalraj.github.io/Context-Aware-Movie-Rating-Prediction-System/
 
 ---
 
