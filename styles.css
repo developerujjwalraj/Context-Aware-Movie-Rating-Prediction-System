@@ -29,9 +29,9 @@ nav{font-size:13px;color:var(--ink3);letter-spacing:0.02em}
 
 .form-section{padding:56px 0;border-bottom:1px solid var(--line)}
 .form-cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
-.section-num{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);font-weight:400;margin-bottom:28px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.section-num{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:black;font-weight:400;margin-bottom:28px;padding-bottom:12px;border-bottom:1px solid var(--line)}
 .field{margin-bottom:28px}
-.field label{display:block;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);font-weight:400;margin-bottom:12px}
+.field label{display:block;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:black;font-weight:400;margin-bottom:12px}
 
 .emotion-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .e-btn{background:var(--off);border:1px solid transparent;color:var(--ink2);font-family:var(--font-body);font-size:12px;font-weight:300;padding:12px 4px 10px;cursor:pointer;border-radius:6px;transition:all 0.15s;text-align:center;letter-spacing:0.01em}
