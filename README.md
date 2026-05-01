@@ -236,7 +236,7 @@ For container hosting:
 
 ---
 
-## 👥 Developed with ❤️ by Ujjwal Raj
+## 🧑‍💻 Developed with ❤️ by Ujjwal Raj
 
 
 
