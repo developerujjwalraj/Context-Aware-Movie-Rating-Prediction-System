@@ -18,11 +18,20 @@ from urllib.parse import urlparse
 import re
 import os
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 
 # TMDB CONFIG
 
-TMDB_API_KEY = "9eaba43292d7ca6807b0897a106cd623"
+TMDB_API_KEY = os.getenv("TMDB_API_KEY", "")
 TMDB_BASE_URL = "https://api.themoviedb.org/3"
+
+if not TMDB_API_KEY:
+    print("[WARN] TMDB_API_KEY not found in environment variables or .env file.")
 
 
 
